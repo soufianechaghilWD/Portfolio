@@ -1,0 +1,98 @@
+.contact {
+    display: block;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+.contact > h1{
+    padding: 3rem 0 2rem 2rem;
+    font-size: 50px;
+}
+.contact__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem 3rem;
+}
+.contact__content > form{
+    padding-left: 7rem;
+    width: 70%;
+}
+.contact__content > form > p{
+    color: green;
+    padding: 1rem 0 0 1.5rem;
+}
+.contact__content > form > div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.contact__content > form > div > label{
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-bottom: 0.7rem;
+}
+.contact__content > form > div > input{
+    width: 40%;
+    height: 30px;
+    margin-left: 1.5rem;
+    outline-width: 0;
+}
+.contact__content > form > div > textarea{
+    width: 50%;
+    outline-width: 0;
+    margin-left: 1.5rem;
+}
+.contact__content > form  > button{
+    margin: 2rem 0  0 1.5rem;
+    background-color: #00D1FF;
+    width: 200px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.contact__content > div{
+    width: 50%;  
+}
+.contact__content > div > h2{
+    padding: 2rem 0;
+    font-size: 1.6rem;
+}
+.contact__content > div > div > a{
+    font-size: 1.7rem;
+}
+.contact__content > div > div > a:not(:first-child) {
+    padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact__content {
+        flex-direction: column;
+        padding: 1rem ;
+    }
+    .contact__content > form{
+        padding: 0;
+        width: 100%;
+    }
+    .contact__content > form > div{
+        flex-direction: column;
+    }
+    .contact__content > form > div > input{
+        width: 70%;
+    }
+    .contact__content > form > div > textarea{
+        width: 85%;
+    }
+    .contact__content > div{
+        width: 100%;  
+    }
+    .contact__content > div > h2{
+        padding: 2rem 0;
+    }
+    .contact__content > div > div {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Educations from './compo/Educations';
+import Hero from './compo/Hero'
+import Navbar from './compo/Navbar'
+import NavMobile from "./compo/NavMobile"
+import Projetcs from './compo/Projetcs';
+import WorkExperience from './compo/WorkExperience';
+import "./App.css"
+import Contact from './compo/Contact';
 
 function App() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+      setIsOpen(!isOpen)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <NavMobile toggle={toggle} isOpen={isOpen} />
+      <Navbar toggle={toggle} />
+      <Hero />
+      <Educations />
+      <WorkExperience />
+      <Projetcs />
+      <Contact />
     </div>
   );
 }
