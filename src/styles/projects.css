@@ -18,6 +18,7 @@
     width: 300px;
     object-fit: cover;
     margin-left: 3.5rem;
+    cursor: pointer;
 }
 .projects__content__row > div{
     padding: 0 4.5rem 0 2rem;
@@ -45,6 +46,16 @@
     font-weight: 700;
     text-decoration: none;
     padding: 0.5rem 2rem;
+}
+.modal{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+.makeStyles-paper-7, .makeStyles-paper-9{
+    padding: 0 !important;
 }
 @media (max-width: 768px) {
     .project{

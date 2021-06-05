@@ -3,9 +3,46 @@ import "../styles/projects.css"
 import Texting from "../files/pic4.png"
 import Social from "../files/pic5.png"
 import Real from "../files/pic6.png"
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
+import Chess from '../files/chess.png'
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: "75%",
+    backgroundColor: theme.palette.background.paper,
+    border: 'none',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    outlineWidth: 0
+    },
+  img: {
+      width: "100%"
+  }
+}));
 
 
 const Projetcs = () => {
+
+    const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    const [shownImg, setShownImg] = React.useState(null)
+
+    const handleOpen = () => {
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+      };
+    
+      const body = (
+        <div className={classes.paper}>
+            <img src={shownImg} alt="" className={classes.img} />
+        </div>
+      );
+
     return (
         <div className="project" id="projects">
             <h1>Projects</h1>
@@ -21,7 +58,20 @@ const Projetcs = () => {
                             <a href="https://github.com/soufianechaghilWD/texting-app-firebase" target="_blank">Code on github</a>
                         </div>
                     </div>
-                    <img src={Texting} alt="" />
+                    <img src={Texting} alt="" onClick={() => {setShownImg(Texting); setOpen(true)}}/>
+                </div>
+                <div className="projects__content__row">
+                    <div>
+                        <h4>A Chess Game </h4>
+                        <p>In this project I built a chess Game , it's a complete chess game with all possible moves (castling, promotion ...) and respects the rules . For this project i didn't use any outside technologies , just HTML, CSS and pure Javascript . 
+                        </p>
+                        <div className="project__btns">
+                            <a href="https://soufianechaghilwd.github.io/chess/" target="_blank">Live Website</a>
+                            <a href="https://github.com/soufianechaghilWD/chess" target="_blank">Code on github</a>
+                        </div>
+                    </div>
+                    <span>Click to have a proper view</span>
+                    <img src={Chess} alt="" onClick={() => {setShownImg(Chess); setOpen(true)}}/>
                 </div>
                 <div className="projects__content__row">
                     <div>
@@ -35,7 +85,7 @@ const Projetcs = () => {
                             <a href="https://github.com/soufianechaghilWD/social_back_end" target="_blank">Code on github</a>
                         </div>
                     </div>
-                    <img src={Social} alt="" />
+                    <img src={Social} alt="" onClick={() => {setShownImg(Social); setOpen(true)}}/>
                 </div>
                 <div className="projects__content__row">
                     <div>
@@ -47,8 +97,19 @@ const Projetcs = () => {
                             <a href="https://github.com/soufianechaghilWD/real-estate" target="_blank">Code on github</a>
                         </div>
                     </div>
-                    <img src={Real} alt="" />
+                    <img src={Real} alt="" onClick={() => {setShownImg(Real); setOpen(true)}}/>
                 </div>
+            </div>
+            <div>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+                className="modal"
+            >
+                {body}
+            </Modal>
             </div>
         </div>
     )
